@@ -1,0 +1,10 @@
+name: spine
+version: 0.1.0
+author: Federico Omoto <federico.omoto@gmail.com>
+description: A Dart implementation of the Esoteric Software Spine runtime.
+homepage: https://github.com/FedeOmoto/spine
+environment:
+  sdk: '>=1.5.8 <1.7.0'
+dependencies:
+  path: '>=1.3.0 <1.4.0'
+  vector_math: '>=1.4.3 <1.5.0'
