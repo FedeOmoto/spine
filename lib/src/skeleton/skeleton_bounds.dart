@@ -39,8 +39,8 @@ class SkeletonBounds {
 
   void update(Skeleton skeleton, bool updateAabb) {
     var slots = skeleton.slots;
-    double x = skeleton.x,
-        y = skeleton.y;
+    double x = skeleton.position.x,
+        y = skeleton.position.y;
 
     _boundingBoxes.clear();
     _polygonPool.freeAll(_polygons);

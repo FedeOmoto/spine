@@ -108,8 +108,8 @@ class MeshAttachment extends Attachment {
     if (slotVertices.length == vertices.length) vertices = slotVertices;
 
     var bone = slot.bone;
-    double x = skeleton.x + bone.worldX,
-        y = skeleton.y + bone.worldY;
+    double x = skeleton.position.x + bone.worldX,
+        y = skeleton.position.y + bone.worldY;
     double m00 = bone.m00,
         m01 = bone.m01,
         m10 = bone.m10,

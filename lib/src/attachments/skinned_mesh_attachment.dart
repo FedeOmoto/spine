@@ -104,8 +104,8 @@ class SkinnedMeshAttachment extends Attachment {
         | ((skeletonColor.g * meshColor.g * regionColor.g * multiplier).truncate() << 8)
         | (skeletonColor.r * meshColor.r * regionColor.r * multiplier).truncate());
 
-    double x = skeleton.x,
-        y = skeleton.y;
+    double x = skeleton.position.x,
+        y = skeleton.position.y;
     var skeletonBones = skeleton.bones;
 
     var ffdArray = slot.attachmentVertices;

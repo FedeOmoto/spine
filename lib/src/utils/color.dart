@@ -61,6 +61,17 @@ class Color {
     _a = other._a;
   }
 
+  /// Constructs a new color from a float.
+  Color.fromFloat(double value) {
+    ByteData bd = new ByteData(4);
+    bd.setFloat32(0, value);
+
+    _r = bd.getUint8(0) / 255;
+    _g = bd.getUint8(1) / 255;
+    _b = bd.getUint8(2) / 255;
+    _a = bd.getUint8(3) / 255;
+  }
+
   /// Returns a new color from a hex string with the format RRGGBBAA.
   Color.hex(String hex) {
     int r = int.parse(hex.substring(0, 2), radix: 16, onError: _onFormatError);

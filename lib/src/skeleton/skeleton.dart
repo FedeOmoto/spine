@@ -41,7 +41,7 @@ class Skeleton {
   final Color color;
   double time;
   bool flipX, flipY;
-  double x, y;
+  Point<double> position = new Point<double>(0.0, 0.0);
 
   Skeleton(SkeletonData data)
       : this.data = data,
@@ -373,11 +373,6 @@ class Skeleton {
       bone.flipX = flipX;
       bone.flipY = flipY;
     });
-  }
-
-  void setPosition(Point<double> value) {
-    x = value.x;
-    y = value.y;
   }
 
   void update(double delta) {

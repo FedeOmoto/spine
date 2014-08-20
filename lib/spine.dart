@@ -33,7 +33,6 @@
  */
 library spine;
 
-import 'dart:html';
 import 'dart:math' as math;
 import 'dart:typed_data';
 import 'dart:async';
@@ -45,6 +44,7 @@ part 'src/utils/color.dart';
 part 'src/utils/poolable.dart';
 part 'src/utils/pool.dart';
 part 'src/utils/enum.dart';
+part 'src/utils/point.dart';
 part 'src/animation/timeline.dart';
 part 'src/animation/curve_timeline.dart';
 part 'src/animation/rotate_timeline.dart';
