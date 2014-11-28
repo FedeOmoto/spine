@@ -59,8 +59,8 @@ class MeshAttachment extends Attachment {
     int verticesLength = vertices.length;
     int worldVerticesLength = (verticesLength / 2 * 5).toInt();
 
-    if (_worldVertices == null || _worldVertices.length != worldVerticesLength)
-        {
+    if (_worldVertices == null ||
+        _worldVertices.length != worldVerticesLength) {
       _worldVertices = new List<double>(worldVerticesLength);
     }
 
@@ -98,10 +98,12 @@ class MeshAttachment extends Attachment {
     var meshColor = _color;
     double a = skeletonColor.a * slotColor.a * meshColor.a * 255;
     double multiplier = premultipliedAlpha ? a : 255.0;
-    double color = Color.intToFloatColor((a.truncate() << 24) |
-        ((skeletonColor.b * slotColor.b * meshColor.b * multiplier).truncate() << 16) |
-        ((skeletonColor.g * slotColor.g * meshColor.g * multiplier).truncate() << 8) |
-        (skeletonColor.r * slotColor.r * meshColor.r * multiplier).truncate());
+    double color =
+        Color.intToFloatColor(
+            (a.truncate() << 24) |
+                ((skeletonColor.b * slotColor.b * meshColor.b * multiplier).truncate() << 16) |
+                ((skeletonColor.g * slotColor.g * meshColor.g * multiplier).truncate() << 8) |
+                (skeletonColor.r * slotColor.r * meshColor.r * multiplier).truncate());
 
     var slotVertices = slot.attachmentVertices;
 
@@ -118,8 +120,8 @@ class MeshAttachment extends Attachment {
     for (int v = 0,
         w = 0,
         n = _worldVertices.length; w < n; v += 2, w += 5) {
-      double vx = vertices[v];
-      double vy = vertices[v + 1];
+      num vx = vertices[v];
+      num vy = vertices[v + 1];
       _worldVertices[w] = vx * m00 + vy * m01 + x;
       _worldVertices[w + 1] = vx * m10 + vy * m11 + y;
       _worldVertices[w + 2] = color;

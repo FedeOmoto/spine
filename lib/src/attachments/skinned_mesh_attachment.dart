@@ -60,8 +60,8 @@ class SkinnedMeshAttachment extends Attachment {
     int verticesLength = regionUVs.length;
     int worldVerticesLength = (verticesLength / 2 * 5).toInt();
 
-    if (_worldVertices == null || _worldVertices.length != worldVerticesLength)
-        {
+    if (_worldVertices == null ||
+        _worldVertices.length != worldVerticesLength) {
       _worldVertices = new List<double>(worldVerticesLength);
     }
 
@@ -99,10 +99,13 @@ class SkinnedMeshAttachment extends Attachment {
     var regionColor = _color;
     double a = skeletonColor.a * meshColor.a * regionColor.a * 255;
     double multiplier = premultipliedAlpha ? a : 255.0;
-    double color = Color.intToFloatColor((a.truncate() << 24) |
-        ((skeletonColor.b * meshColor.b * regionColor.b * multiplier).truncate() << 16)
-        | ((skeletonColor.g * meshColor.g * regionColor.g * multiplier).truncate() << 8)
-        | (skeletonColor.r * meshColor.r * regionColor.r * multiplier).truncate());
+    double color =
+        Color.intToFloatColor(
+            (a.truncate() << 24) |
+                ((skeletonColor.b * meshColor.b * regionColor.b * multiplier).truncate() <<
+                    16) |
+                ((skeletonColor.g * meshColor.g * regionColor.g * multiplier).truncate() << 8) |
+                (skeletonColor.r * meshColor.r * regionColor.r * multiplier).truncate());
 
     double x = skeleton.position.x,
         y = skeleton.position.y;
@@ -162,7 +165,7 @@ class SkinnedMeshAttachment extends Attachment {
     }
   }
 
-  List<double> get getWorldVertices => _worldVertices;
+  List<double> get worldVertices => _worldVertices;
 
-  Color get getColor => _color;
+  Color get color => _color;
 }

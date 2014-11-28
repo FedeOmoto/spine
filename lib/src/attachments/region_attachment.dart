@@ -85,17 +85,29 @@ class RegionAttachment extends Attachment {
     if (_region.rotate) {
       localX += _region.offsetX / _region.originalWidth * width;
       localY += _region.offsetY / _region.originalHeight * height;
-      localX2 -= (_region.originalWidth - _region.offsetX -
-          _region.packedHeight) / _region.originalWidth * width;
-      localY2 -= (_region.originalHeight - _region.offsetY -
-          _region.packedWidth) / _region.originalHeight * height;
+      localX2 -= (_region.originalWidth -
+          _region.offsetX -
+          _region.packedHeight) /
+          _region.originalWidth *
+          width;
+      localY2 -= (_region.originalHeight -
+          _region.offsetY -
+          _region.packedWidth) /
+          _region.originalHeight *
+          height;
     } else {
       localX += _region.offsetX / _region.originalWidth * width;
       localY += _region.offsetY / _region.originalHeight * height;
-      localX2 -= (_region.originalWidth - _region.offsetX - _region.packedWidth)
-          / _region.originalWidth * width;
-      localY2 -= (_region.originalHeight - _region.offsetY -
-          _region.packedHeight) / _region.originalHeight * height;
+      localX2 -= (_region.originalWidth -
+          _region.offsetX -
+          _region.packedWidth) /
+          _region.originalWidth *
+          width;
+      localY2 -= (_region.originalHeight -
+          _region.offsetY -
+          _region.packedHeight) /
+          _region.originalHeight *
+          height;
     }
 
     localX *= scaleX;
@@ -164,10 +176,13 @@ class RegionAttachment extends Attachment {
     var regionColor = _color;
     double a = skeletonColor.a * slotColor.a * regionColor.a * 255;
     double multiplier = premultipliedAlpha ? a : 255.0;
-    double color = Color.intToFloatColor((a.truncate() << 24) |
-        ((skeletonColor.b * slotColor.b * regionColor.b * multiplier).truncate() << 16)
-        | ((skeletonColor.g * slotColor.g * regionColor.g * multiplier).truncate() << 8)
-        | (skeletonColor.r * slotColor.r * regionColor.r * multiplier).truncate());
+    double color =
+        Color.intToFloatColor(
+            (a.truncate() << 24) |
+                ((skeletonColor.b * slotColor.b * regionColor.b * multiplier).truncate() <<
+                    16) |
+                ((skeletonColor.g * slotColor.g * regionColor.g * multiplier).truncate() << 8) |
+                (skeletonColor.r * slotColor.r * regionColor.r * multiplier).truncate());
 
     var bone = slot.bone;
     double x = skeleton.position.x + bone.worldX,
@@ -203,7 +218,7 @@ class RegionAttachment extends Attachment {
     _vertices[C4] = color;
   }
 
-  List<double> get getWorldVertices => _vertices;
+  List<double> get worldVertices => _vertices;
 
   List<double> get getOffset => _offset;
 

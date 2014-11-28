@@ -14,5 +14,5 @@ GitHub: [https://github.com/FedeOmoto/pixi_examples/tree/master/web/12_spine/](h
 
 ## Docs
 
-[http://www.dartdocs.org/documentation/spine/0.1.0+1/](http://www.dartdocs.org/documentation/spine/0.1.0+1/)
+[http://www.dartdocs.org/documentation/spine/0.1.0+2/](http://www.dartdocs.org/documentation/spine/0.1.0+2/)
 
